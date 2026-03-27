@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Textos Moi | Sitio de Autor</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <style>
+    body { 
+      background: #2C1810 !important; 
+      color: #E8D5C4 !important; 
+      font-family: Georgia, 'Times New Roman', serif;
+      min-height: 100vh;
+      margin: 0;
+      line-height: 1.8;
+    }
+    .golden-sparkles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+    .nav-header { background: linear-gradient(180deg, #1A0F0A 0%, transparent 100%); padding: 1.5rem 0; position: sticky; top: 0; z-index: 100; }
+    .nav-container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .logo { font-size: 1.8rem; font-weight: normal; letter-spacing: 0.3em; color: #D4AF37; text-decoration: none; text-transform: uppercase; }
+    .nav-menu { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .nav-link { color: #B8A090; text-decoration: none; padding: 0.5rem 1rem; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .nav-link:hover, .nav-link.active { color: #E8D5C4; }
+    .hero { min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; position: relative; z-index: 1; }
+    .hero-title { font-size: 3.5rem; font-weight: normal; letter-spacing: 0.2em; color: #D4AF37; margin-bottom: 1.5rem; }
+    .hero-subtitle { font-size: 1.2rem; color: #B8A090; max-width: 600px; margin: 0 auto 2rem; }
+    .btn { display: inline-block; padding: 0.8rem 2rem; background: #5B7C99; color: #E8D5C4; text-decoration: none; border: none; border-radius: 2px; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }
+    .btn-secondary { background: transparent; border: 1px solid #5B7C99; }
+    .section { padding: 4rem 0; position: relative; z-index: 1; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+    .section-title { font-size: 2rem; font-weight: normal; letter-spacing: 0.15em; color: #D4AF37; text-align: center; margin-bottom: 3rem; text-transform: uppercase; }
+    .content-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .content-card { background: #3D2318; padding: 2rem; border-radius: 4px; }
+    .content-card-title { font-size: 1.4rem; color: #E8D5C4; margin-bottom: 1rem; letter-spacing: 0.1em; }
+    .content-card-excerpt { color: #B8A090; font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .content-card-meta { color: #8B7355; font-size: 0.85rem; font-style: italic; }
+    .photo-frame { position: relative; overflow: hidden; border-radius: 4px; margin: 1.5rem 0; }
+    .photo-frame img { width: 100%; height: auto; display: block; }
+    .photo-frame::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, transparent 40%, rgba(44,24,16,0.8) 100%); pointer-events: none; z-index: 1; }
+    .footer { background: #1A0F0A; padding: 3rem 0; margin-top: 4rem; text-align: center; }
+    .footer-text { color: #8B7355; font-size: 0.9rem; }
+    .mt-2 { margin-top: 2rem; }
+    .text-center { text-align: center; }
+    .text-gold { color: #D4AF37; }
+  </style>
+</head>
+<body>
+  <!-- Fondo con destellos dorados -->
+  <div class="golden-sparkles"></div>
+  
+  <!-- Navegación -->
+  <header class="nav-header">
+    <nav class="container nav-container">
+      <a href="index.html" class="logo">Textos Moi</a>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link active">Inicio</a>
+        <a href="relato.html" class="nav-link">Relato</a>
+        <a href="ensayo.html" class="nav-link">Ensayo</a>
+        <a href="poesia.html" class="nav-link">Poesía</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contacto.html" class="nav-link">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Héroe principal -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title text-animation">TEXTOS MOI</h1>
+      <p class="hero-subtitle">
+        Un espacio íntimo donde las palabras cobran vida a través del relato, el ensayo y la poesía.
+        Explora mis reflexiones, historias y versos en este viaje literario.
+      </p>
+      <div style="margin-top: 2rem;">
+        <a href="relato.html" class="btn">Explorar Relatos</a>
+        <a href="poesia.html" class="btn btn-secondary" style="margin-left: 1rem;">Leer Poesía</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Secciones destacadas -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Secciones</h2>
+      <div class="content-grid">
+        <!-- Relato -->
+        <article class="content-card">
+          <div class="photo-frame">
+            <img src="./images/relato-escritura.jpg"
+                 alt="Relato - Escritura creativa">
+          </div>
+          <h3 class="content-card-title mt-2">Relato</h3>
+          <p class="content-card-excerpt">
+            Historias que nacen de la observación cotidiana y se transforman en narrativas
+            que exploran la condición humana, los vínculos y los momentos efímeros.
+          </p>
+          <a href="relato.html" class="btn">Leer relatos</a>
+        </article>
+
+        <!-- Ensayo -->
+        <article class="content-card">
+          <div class="photo-frame">
+            <img src="./images/ensayo-reflexion.jpg"
+                 alt="Ensayo - Reflexión">
+          </div>
+          <h3 class="content-card-title mt-2">Ensayo</h3>
+          <p class="content-card-excerpt">
+            Reflexiones sobre literatura, arte, cultura y existencia.
+            Pensamientos que buscan comprender el mundo a través de la palabra escrita.
+          </p>
+          <a href="ensayo.html" class="btn">Leer ensayos</a>
+        </article>
+
+        <!-- Poesía -->
+        <article class="content-card">
+          <div class="photo-frame">
+            <img src="./images/poesia-versos.jpg"
+                 alt="Poesía - Versos">
+          </div>
+          <h3 class="content-card-title mt-2">Poesía</h3>
+          <p class="content-card-excerpt">
+            Versos que capturan instantes, emociones y silencios.
+            La poesía como forma de habitar el mundo con mayor profundidad.
+          </p>
+          <a href="poesia.html" class="btn">Leer poemas</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video destacado -->
+  <section class="section" style="background: var(--bg-darker);">
+    <div class="container">
+      <h2 class="section-title">Palabras en Movimiento</h2>
+      <div class="video-container" style="max-width: 800px; margin: 0 auto;">
+        <iframe 
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&rel=0" 
+          title="Video destacado"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="text-center mt-3" style="color: var(--text-secondary); max-width: 600px; margin: 2rem auto 0;">
+        Exploraciones visuales y sonoras que complementan la experiencia literaria.
+      </p>
+    </div>
+  </section>
+
+  <!-- Últimas publicaciones -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Últimas Publicaciones</h2>
+      <div id="blog-posts-container" class="content-grid">
+        <!-- Se carga dinámicamente desde JS -->
+        <div class="content-card">
+          <h3 class="content-card-title">El silencio entre las palabras</h3>
+          <p class="content-card-excerpt">
+            Hay un espacio vacío entre lo que decimos y lo que queremos decir. 
+            En ese intersticio habita la verdadera comunicación...
+          </p>
+          <div class="content-card-meta">Publicado el 20 de marzo, 2026</div>
+        </div>
+        
+        <div class="content-card">
+          <h3 class="content-card-title">Carta a un lector futuro</h3>
+          <p class="content-card-excerpt">
+            Si estás leyendo esto, es porque algo en mis palabras resonó con las tuyas. 
+            Este es un diálogo a través del tiempo...
+          </p>
+          <div class="content-card-meta">Publicado el 18 de marzo, 2026</div>
+        </div>
+        
+        <div class="content-card">
+          <h3 class="content-card-title">Pequeña teoría del amanecer</h3>
+          <p class="content-card-excerpt">
+            Cada mañana es una posibilidad de recomenzar. 
+            La luz que entra por la ventana no es la misma que ayer...
+          </p>
+          <div class="content-card-meta">Publicado el 15 de marzo, 2026</div>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <a href="blog.html" class="btn">Ver todo el blog</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">
+        © 2026 Textos Moi. Todos los derechos reservados.
+      </p>
+      <p class="footer-text mt-1">
+        <a href="admin.html" style="color: var(--text-muted); text-decoration: none;">Acceso Autor</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

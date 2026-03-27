@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Textos Moi</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .blog-header {
+      padding: 4rem 0 2rem;
+      text-align: center;
+    }
+    
+    .blog-intro {
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      line-height: 2;
+    }
+    
+    .blog-main {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+      padding: 2rem 0;
+    }
+    
+    .blog-sidebar {
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+    }
+    
+    .sidebar-card {
+      background: var(--bg-light);
+      padding: 1.5rem;
+      border-radius: 4px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .sidebar-title {
+      font-size: 1.1rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--bg-darker);
+    }
+    
+    .category-list {
+      list-style: none;
+    }
+    
+    .category-list li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .category-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      transition: color 0.3s ease;
+    }
+    
+    .category-link:hover {
+      color: var(--gold);
+    }
+    
+    .category-count {
+      background: var(--bg-darker);
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    
+    .newsletter-form .form-input {
+      margin-bottom: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+      .blog-main {
+        grid-template-columns: 1fr;
+      }
+      
+      .blog-sidebar {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Fondo con destellos dorados -->
+  <div class="golden-sparkles"></div>
+  
+  <!-- Navegación -->
+  <header class="nav-header">
+    <nav class="container nav-container">
+      <a href="index.html" class="logo">Textos Moi</a>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="relato.html" class="nav-link">Relato</a>
+        <a href="ensayo.html" class="nav-link">Ensayo</a>
+        <a href="poesia.html" class="nav-link">Poesía</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+        <a href="contacto.html" class="nav-link">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Header del Blog -->
+  <section class="blog-header">
+    <div class="container">
+      <h1 class="hero-title text-animation" style="font-size: 2.5rem;">BLOG</h1>
+      <p class="blog-intro">
+        Reflexiones, pensamientos y apuntes sobre el proceso creativo, 
+        la escritura y la vida. Un espacio para compartir el detrás de escena 
+        de las palabras.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contenido principal -->
+  <section class="section">
+    <div class="container">
+      <div class="blog-main">
+        <!-- Posts del blog -->
+        <div class="blog-posts">
+          <div id="blog-posts-container">
+            <!-- Post de ejemplo 1 -->
+            <article class="blog-post">
+              <h2 class="blog-post-title">El silencio entre las palabras</h2>
+              <div class="blog-post-date">
+                20 de marzo, 2026 • <span class="text-gold">Reflexión</span>
+              </div>
+              <div class="blog-post-content">
+                <p>Hay un espacio vacío entre lo que decimos y lo que queremos decir. En ese intersticio habita la verdadera comunicación, esa que trasciende el lenguaje y toca algo más profundo, más esencial.</p>
+                <br>
+                <p>Cuando escribo, a menudo me encuentro buscando no las palabras, sino los silencios adecuados. Porque es en lo no dicho donde el lector encuentra su propio significado, donde la lectura se convierte en creación compartida.</p>
+                <br>
+                <p>Los grandes textos no son aquellos que lo dicen todo, sino aquellos que saben callar lo justo para dejar espacio al otro.</p>
+              </div>
+              
+              <!-- Sección de comentarios -->
+              <div class="comments-section">
+                <h3 style="color: var(--gold); font-size: 1.2rem; margin-bottom: 1.5rem; letter-spacing: 0.05em;">
+                  Comentarios (<span class="comment-count">2</span>)
+                </h3>
+                
+                <div class="comments-list">
+                  <div class="comment">
+                    <div class="comment-author">María González</div>
+                    <div class="comment-date">21 de marzo, 2026</div>
+                    <div class="comment-text">
+                      Hermosa reflexión. Me recuerda a lo que decía Cortázar sobre los espacios en blanco en la literatura. ¡Gracias por compartir!
+                    </div>
+                  </div>
+                  
+                  <div class="comment">
+                    <div class="comment-author">Carlos Mendez</div>
+                    <div class="comment-date">22 de marzo, 2026</div>
+                    <div class="comment-text">
+                      Totalmente de acuerdo. A veces los mejores poemas son los que dejan más espacio para la interpretación del lector.
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Formulario de comentarios -->
+                <form class="comment-form" style="margin-top: 1.5rem;">
+                  <div class="form-group">
+                    <label class="form-label">Tu nombre</label>
+                    <input type="text" class="form-input commenter-name" placeholder="Nombre" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Tu comentario</label>
+                    <textarea class="form-textarea commenter-comment" placeholder="Escribe tu comentario..." style="min-height: 100px;" required></textarea>
+                  </div>
+                  <button type="submit" class="btn">Publicar Comentario</button>
+                </form>
+              </div>
+            </article>
+            
+            <!-- Post de ejemplo 2 -->
+            <article class="blog-post">
+              <h2 class="blog-post-title">Carta a un lector futuro</h2>
+              <div class="blog-post-date">
+                18 de marzo, 2026 • <span class="text-gold">Personal</span>
+              </div>
+              <div class="blog-post-content">
+                <p>Si estás leyendo esto, es porque algo en mis palabras resonó con las tuyas. Este es un diálogo a través del tiempo, un puente tendido entre dos conciencias que nunca se encontrarán físicamente pero que se tocan a través de la escritura.</p>
+                <br>
+                <p>Escribo sabiendo que alguien, en algún lugar, leerá estas líneas. No sé quién eres, no sé cuándo llegarás a estas palabras, pero escribo para ti. Porque la escritura es, en esencia, un acto de fe en el otro.</p>
+                <br>
+                <p>Gracias por estar aquí, por dedicar tu tiempo有限 a estas palabras. Espero que encuentres en ellas algo que te acompañe, aunque sea un instante.</p>
+              </div>
+              
+              <!-- Sección de comentarios -->
+              <div class="comments-section">
+                <h3 style="color: var(--gold); font-size: 1.2rem; margin-bottom: 1.5rem; letter-spacing: 0.05em;">
+                  Comentarios (<span class="comment-count">1</span>)
+                </h3>
+                
+                <div class="comments-list">
+                  <div class="comment">
+                    <div class="comment-author">Ana Rodríguez</div>
+                    <div class="comment-date">19 de marzo, 2026</div>
+                    <div class="comment-text">
+                      Qué hermoso leer esto. Me siento esa lectora futura a la que le escribes. Gracias por compartir tu proceso.
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Formulario de comentarios -->
+                <form class="comment-form" style="margin-top: 1.5rem;">
+                  <div class="form-group">
+                    <label class="form-label">Tu nombre</label>
+                    <input type="text" class="form-input commenter-name" placeholder="Nombre" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Tu comentario</label>
+                    <textarea class="form-textarea commenter-comment" placeholder="Escribe tu comentario..." style="min-height: 100px;" required></textarea>
+                  </div>
+                  <button type="submit" class="btn">Publicar Comentario</button>
+                </form>
+              </div>
+            </article>
+            
+            <!-- Post de ejemplo 3 -->
+            <article class="blog-post">
+              <h2 class="blog-post-title">Pequeña teoría del amanecer</h2>
+              <div class="blog-post-date">
+                15 de marzo, 2026 • <span class="text-gold">Observación</span>
+              </div>
+              <div class="blog-post-content">
+                <p>Cada mañana es una posibilidad de recomenzar. La luz que entra por la ventana no es la misma que ayer, y sin embargo, algo en ella nos resulta familiar. Es la promesa renovada de que el mundo continúa, de que estamos aquí para presenciarlo.</p>
+                <br>
+                <p>Los amaneceres son como páginas en blanco. No importa lo que haya sucedido el día anterior, la mañana llega con su luz limpia, su aire fresco, su silencio lleno de posibilidades.</p>
+                <br>
+                <p>Me pregunto si los antiguos griegos tenían razón al pensar que cada amanecer era una nueva aurora, una diosa diferente trayendo su luz. Hay algo de divino en este ritual cotidiano que damos por sentado.</p>
+              </div>
+              
+              <!-- Sección de comentarios -->
+              <div class="comments-section">
+                <h3 style="color: var(--gold); font-size: 1.2rem; margin-bottom: 1.5rem; letter-spacing: 0.05em;">
+                  Comentarios (<span class="comment-count">0</span>)
+                </h3>
+                
+                <div class="comments-list">
+                  <p style="color: var(--text-muted); font-style: italic;">Sé el primero en comentar.</p>
+                </div>
+                
+                <!-- Formulario de comentarios -->
+                <form class="comment-form" style="margin-top: 1.5rem;">
+                  <div class="form-group">
+                    <label class="form-label">Tu nombre</label>
+                    <input type="text" class="form-input commenter-name" placeholder="Nombre" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Tu comentario</label>
+                    <textarea class="form-textarea commenter-comment" placeholder="Escribe tu comentario..." style="min-height: 100px;" required></textarea>
+                  </div>
+                  <button type="submit" class="btn">Publicar Comentario</button>
+                </form>
+              </div>
+            </article>
+          </div>
+        </div>
+        
+        <!-- Sidebar -->
+        <aside class="blog-sidebar">
+          <div class="sidebar-card">
+            <h3 class="sidebar-title">Categorías</h3>
+            <ul class="category-list">
+              <li>
+                <a href="#" class="category-link">
+                  <span>Reflexión</span>
+                  <span class="category-count">5</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="category-link">
+                  <span>Personal</span>
+                  <span class="category-count">3</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="category-link">
+                  <span>Observación</span>
+                  <span class="category-count">4</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="category-link">
+                  <span>Proceso Creativo</span>
+                  <span class="category-count">2</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="sidebar-card">
+            <h3 class="sidebar-title">Newsletter</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
+              Suscríbete para recibir nuevas publicaciones directamente en tu email.
+            </p>
+            <form class="newsletter-form">
+              <input type="email" class="form-input" placeholder="tu@email.com">
+              <button type="submit" class="btn" style="width: 100%;">Suscribirse</button>
+            </form>
+          </div>
+          
+          <div class="sidebar-card">
+            <h3 class="sidebar-title">Sobre el Blog</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.8;">
+              Este blog es un espacio de reflexión sobre la escritura, la lectura y el proceso creativo. Aquí comparto pensamientos, apuntes y observaciones que no encuentran lugar en los relatos, ensayos o poemas, pero que forman parte del mismo universo.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">
+        © 2026 Textos Moi. Todos los derechos reservados.
+      </p>
+      <p class="footer-text mt-1">
+        <a href="admin.html" style="color: var(--text-muted); text-decoration: none;">Acceso Autor</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

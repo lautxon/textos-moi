@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Autor | Textos Moi</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .panel-container {
+      padding: 3rem 2rem;
+      min-height: 70vh;
+    }
+    
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    .panel-title {
+      font-size: 2rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      font-weight: normal;
+    }
+    
+    .panel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    
+    .panel-card {
+      background: var(--bg-light);
+      padding: 2rem;
+      border-radius: 4px;
+    }
+    
+    .panel-card-title {
+      font-size: 1.3rem;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.05em;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--bg-darker);
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    
+    .stat-item {
+      background: var(--bg-darker);
+      padding: 1.5rem;
+      border-radius: 4px;
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      color: var(--gold);
+      font-weight: normal;
+    }
+    
+    .stat-label {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    .recent-posts {
+      margin-top: 1rem;
+    }
+    
+    .recent-post-item {
+      background: var(--bg-darker);
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+      border-radius: 4px;
+      border-left: 3px solid var(--blue-matte);
+    }
+    
+    .recent-post-title {
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+    
+    .recent-post-meta {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+    
+    .section-badge {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      background: var(--blue-matte);
+      color: var(--text-primary);
+      font-size: 0.75rem;
+      border-radius: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-left: 0.5rem;
+    }
+    
+    @media (max-width: 768px) {
+      .panel-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Fondo con destellos dorados -->
+  <div class="golden-sparkles"></div>
+  
+  <!-- Navegación -->
+  <header class="nav-header">
+    <nav class="container nav-container">
+      <a href="index.html" class="logo">Textos Moi</a>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="relato.html" class="nav-link">Relato</a>
+        <a href="ensayo.html" class="nav-link">Ensayo</a>
+        <a href="poesia.html" class="nav-link">Poesía</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contacto.html" class="nav-link">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Panel de Autor -->
+  <section class="panel-container">
+    <div class="container">
+      <div class="panel-header">
+        <h1 class="panel-title">Panel de Autor</h1>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <span style="color: var(--text-secondary);">Bienvenido</span>
+          <button id="logout-btn" class="btn btn-secondary">Cerrar Sesión</button>
+        </div>
+      </div>
+      
+      <div class="panel-grid">
+        <!-- Formulario de publicación -->
+        <div class="panel-card">
+          <h2 class="panel-card-title">Nueva Publicación</h2>
+          
+          <form id="content-form">
+            <div class="form-group">
+              <label for="post-title" class="form-label">Título</label>
+              <input 
+                type="text" 
+                id="post-title" 
+                name="title" 
+                class="form-input" 
+                placeholder="Escribe el título de tu publicación"
+                required
+              >
+            </div>
+            
+            <div class="form-group">
+              <label for="post-section" class="form-label">Sección</label>
+              <select id="post-section" name="section" class="form-select" required>
+                <option value="">Selecciona una sección...</option>
+                <option value="relato">Relato</option>
+                <option value="ensayo">Ensayo</option>
+                <option value="poesia">Poesía</option>
+                <option value="blog">Blog (Publicación general)</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="post-type" class="form-label">Tipo de contenido</label>
+              <select id="post-type" name="type" class="form-select">
+                <option value="texto">Texto</option>
+                <option value="video">Video</option>
+                <option value="foto">Fotografía</option>
+                <option value="mixto">Mixto</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="post-content" class="form-label">Contenido</label>
+              <textarea 
+                id="post-content" 
+                name="content" 
+                class="form-textarea" 
+                placeholder="Escribe tu contenido aquí..."
+                style="min-height: 200px;"
+                required
+              ></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="post-excerpt" class="form-label">Extracto (opcional)</label>
+              <textarea 
+                id="post-excerpt" 
+                name="excerpt" 
+                class="form-textarea" 
+                placeholder="Un breve resumen para la vista previa..."
+                style="min-height: 80px;"
+              ></textarea>
+            </div>
+            
+            <button type="submit" class="btn" style="width: 100%;">
+              Publicar Contenido
+            </button>
+          </form>
+        </div>
+        
+        <!-- Estadísticas y publicaciones recientes -->
+        <div>
+          <div class="panel-card mb-2">
+            <h2 class="panel-card-title">Estadísticas</h2>
+            <div class="stats-grid">
+              <div class="stat-item">
+                <div class="stat-number" id="stat-total">0</div>
+                <div class="stat-label">Total Publicaciones</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" id="stat-relatos">0</div>
+                <div class="stat-label">Relatos</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" id="stat-ensayos">0</div>
+                <div class="stat-label">Ensayos</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" id="stat-poesia">0</div>
+                <div class="stat-label">Poemas</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="panel-card">
+            <h2 class="panel-card-title">Publicaciones Recientes</h2>
+            <div class="recent-posts" id="recent-posts-container">
+              <p style="color: var(--text-muted); text-align: center; padding: 2rem;">
+                No hay publicaciones aún.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">
+        © 2026 Textos Moi. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Actualizar estadísticas
+    function updateStats() {
+      const posts = JSON.parse(localStorage.getItem('blogPosts') || '[]');
+      
+      document.getElementById('stat-total').textContent = posts.length;
+      document.getElementById('stat-relatos').textContent = posts.filter(p => p.section === 'relato').length;
+      document.getElementById('stat-ensayos').textContent = posts.filter(p => p.section === 'ensayo').length;
+      document.getElementById('stat-poesia').textContent = posts.filter(p => p.section === 'poesia').length;
+      
+      // Actualizar publicaciones recientes
+      const recentContainer = document.getElementById('recent-posts-container');
+      if (posts.length === 0) {
+        recentContainer.innerHTML = '<p style="color: var(--text-muted); text-align: center; padding: 2rem;">No hay publicaciones aún.</p>';
+      } else {
+        recentContainer.innerHTML = posts.slice(0, 5).map(post => `
+          <div class="recent-post-item">
+            <div class="recent-post-title">
+              ${post.title}
+              <span class="section-badge">${post.section || 'blog'}</span>
+            </div>
+            <div class="recent-post-meta">
+              ${new Date(post.date).toLocaleDateString('es-ES')}
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+    
+    // Actualizar al cargar
+    document.addEventListener('DOMContentLoaded', updateStats);
+  </script>
+</body>
+</html>

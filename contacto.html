@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Textos Moi</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .contact-header {
+      padding: 4rem 0 2rem;
+      text-align: center;
+    }
+    
+    .contact-intro {
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      line-height: 2;
+    }
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      padding: 3rem 0;
+    }
+    
+    .contact-info-card {
+      background: var(--bg-light);
+      padding: 2.5rem;
+      border-radius: 4px;
+    }
+    
+    .contact-info-title {
+      font-size: 1.4rem;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.05em;
+    }
+    
+    .contact-info-text {
+      color: var(--text-secondary);
+      line-height: 2;
+      margin-bottom: 2rem;
+    }
+    
+    .social-grid-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .social-link-contact {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem;
+      background: var(--bg-darker);
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text-primary);
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+    }
+    
+    .social-link-contact:hover {
+      background: var(--blue-matte);
+      transform: translateX(5px);
+      border-color: var(--gold);
+    }
+    
+    .social-icon-contact {
+      font-size: 1.5rem;
+      color: var(--gold);
+      width: 40px;
+      text-align: center;
+    }
+    
+    .social-name-contact {
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+    }
+    
+    .social-handle-contact {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-left: auto;
+    }
+    
+    .contact-form-card {
+      background: var(--bg-light);
+      padding: 2.5rem;
+      border-radius: 4px;
+    }
+    
+    .form-note {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 1rem;
+      font-style: italic;
+    }
+    
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Fondo con destellos dorados -->
+  <div class="golden-sparkles"></div>
+  
+  <!-- Navegación -->
+  <header class="nav-header">
+    <nav class="container nav-container">
+      <a href="index.html" class="logo">Textos Moi</a>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="relato.html" class="nav-link">Relato</a>
+        <a href="ensayo.html" class="nav-link">Ensayo</a>
+        <a href="poesia.html" class="nav-link">Poesía</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contacto.html" class="nav-link active">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Header de Contacto -->
+  <section class="contact-header">
+    <div class="container">
+      <h1 class="hero-title text-animation" style="font-size: 2.5rem;">CONTACTO</h1>
+      <p class="contact-intro">
+        Si quieres ponerte en contacto, compartir tus pensamientos sobre mi trabajo, 
+        o simplemente saludar, aquí encontrarás todas las formas de hacerlo.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contenido principal -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Información de contacto y redes -->
+        <div class="contact-info-card">
+          <h2 class="contact-info-title">Redes Sociales</h2>
+          <p class="contact-info-text">
+            Sígueme en mis redes sociales para estar al tanto de nuevas publicaciones, 
+            eventos de lectura y otros proyectos literarios.
+          </p>
+          
+          <div class="social-grid-contact">
+            <!-- Instagram -->
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-link-contact">
+              <span class="social-icon-contact">📷</span>
+              <span class="social-name-contact">Instagram</span>
+              <span class="social-handle-contact">@textosmoi</span>
+            </a>
+            
+            <!-- Twitter / X -->
+            <a href="https://twitter.com" target="_blank" rel="noopener" class="social-link-contact">
+              <span class="social-icon-contact">🐦</span>
+              <span class="social-name-contact">Twitter / X</span>
+              <span class="social-handle-contact">@textosmoi</span>
+            </a>
+            
+            <!-- Facebook -->
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-link-contact">
+              <span class="social-icon-contact">📘</span>
+              <span class="social-name-contact">Facebook</span>
+              <span class="social-handle-contact">/textosmoi</span>
+            </a>
+            
+            <!-- Goodreads -->
+            <a href="https://goodreads.com" target="_blank" rel="noopener" class="social-link-contact">
+              <span class="social-icon-contact">📚</span>
+              <span class="social-name-contact">Goodreads</span>
+              <span class="social-handle-contact">/textosmoi</span>
+            </a>
+            
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link-contact">
+              <span class="social-icon-contact">💼</span>
+              <span class="social-name-contact">LinkedIn</span>
+              <span class="social-handle-contact">/in/textosmoi</span>
+            </a>
+            
+            <!-- YouTube -->
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="social-link-contact">
+              <span class="social-icon-contact">📹</span>
+              <span class="social-name-contact">YouTube</span>
+              <span class="social-handle-contact">/textosmoi</span>
+            </a>
+            
+            <!-- Substack / Newsletter -->
+            <a href="https://substack.com" target="_blank" rel="noopener" class="social-link-contact">
+              <span class="social-icon-contact">✉️</span>
+              <span class="social-name-contact">Substack</span>
+              <span class="social-handle-contact">textosmoi.substack.com</span>
+            </a>
+            
+            <!-- Email -->
+            <a href="mailto:hola@textosmoi.com" class="social-link-contact">
+              <span class="social-icon-contact">📧</span>
+              <span class="social-name-contact">Email</span>
+              <span class="social-handle-contact">hola@textosmoi.com</span>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Formulario de contacto -->
+        <div class="contact-form-card">
+          <h2 class="contact-info-title">Envíame un mensaje</h2>
+          <p class="contact-info-text" style="margin-bottom: 1.5rem;">
+            Completa el formulario y te responderé lo antes posible.
+          </p>
+          
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="contact-name" class="form-label">Nombre</label>
+              <input 
+                type="text" 
+                id="contact-name" 
+                name="name" 
+                class="form-input" 
+                placeholder="Tu nombre"
+                required
+              >
+            </div>
+            
+            <div class="form-group">
+              <label for="contact-email" class="form-label">Email</label>
+              <input 
+                type="email" 
+                id="contact-email" 
+                name="email" 
+                class="form-input" 
+                placeholder="tu@email.com"
+                required
+              >
+            </div>
+            
+            <div class="form-group">
+              <label for="contact-subject" class="form-label">Asunto</label>
+              <select id="contact-subject" name="subject" class="form-select" required>
+                <option value="">Selecciona un asunto...</option>
+                <option value="consulta">Consulta general</option>
+                <option value="colaboracion">Propuesta de colaboración</option>
+                <option value="prensa">Prensa / Medios</option>
+                <option value="evento">Invitación a evento</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="contact-message" class="form-label">Mensaje</label>
+              <textarea 
+                id="contact-message" 
+                name="message" 
+                class="form-textarea" 
+                placeholder="Escribe tu mensaje aquí..."
+                style="min-height: 180px;"
+                required
+              ></textarea>
+            </div>
+            
+            <button type="submit" class="btn" style="width: 100%;">
+              Enviar Mensaje
+            </button>
+            
+            <p class="form-note">
+              * Tu mensaje será enviado directamente a mi email personal. 
+              Respondo generalmente dentro de 48-72 horas.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección adicional: Sobre mí -->
+  <section class="section" style="background: var(--bg-darker);">
+    <div class="container">
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <h2 class="section-title">Sobre Mí</h2>
+        <div class="photo-frame" style="max-width: 300px; margin: 0 auto 2rem;">
+          <img src="./images/relato-escritura.jpg"
+               alt="Autor"
+               style="border-radius: 50%;">
+        </div>
+        <p style="color: var(--text-secondary); line-height: 2; margin-bottom: 1.5rem;">
+          Soy escritor/a y creador/a de contenidos. Este sitio es mi espacio personal 
+          donde comparto mis reflexiones, historias y poemas. La escritura es mi forma 
+          de habitar el mundo, de comprenderlo y de conectar con otros.
+        </p>
+        <p style="color: var(--text-secondary); line-height: 2;">
+          Agradezco tu visita y espero que encuentres en estas palabras algo que resuene 
+          contigo. La lectura es un acto compartido, y cada lector completa el texto con 
+          su propia experiencia.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">
+        © 2026 Textos Moi. Todos los derechos reservados.
+      </p>
+      <p class="footer-text mt-1">
+        <a href="admin.html" style="color: var(--text-muted); text-decoration: none;">Acceso Autor</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Manejo del formulario de contacto
+    document.getElementById('contact-form')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('contact-name').value;
+      const email = document.getElementById('contact-email').value;
+      const subject = document.getElementById('contact-subject').value;
+      const message = document.getElementById('contact-message').value;
+      
+      // Simular envío (en producción usar backend o servicio de email)
+      console.log('Formulario enviado:', { name, email, subject, message });
+      
+      // Mostrar notificación de éxito
+      showNotification('Mensaje enviado. ¡Gracias por contactarme!', 'success');
+      
+      // Resetear formulario
+      this.reset();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso Autor | Textos Moi</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .auth-container {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    
+    .auth-card {
+      background: var(--bg-light);
+      padding: 3rem;
+      border-radius: 4px;
+      max-width: 450px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+    
+    .auth-title {
+      font-size: 1.8rem;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.1em;
+    }
+    
+    .auth-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+    
+    .auth-info {
+      background: var(--bg-darker);
+      padding: 1rem;
+      border-radius: 4px;
+      margin-bottom: 1.5rem;
+      border-left: 3px solid var(--blue-matte);
+    }
+    
+    .auth-info p {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      margin: 0;
+    }
+    
+    .auth-info code {
+      color: var(--gold);
+      background: var(--bg-light);
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Fondo con destellos dorados -->
+  <div class="golden-sparkles"></div>
+  
+  <!-- Navegación -->
+  <header class="nav-header">
+    <nav class="container nav-container">
+      <a href="index.html" class="logo">Textos Moi</a>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="relato.html" class="nav-link">Relato</a>
+        <a href="ensayo.html" class="nav-link">Ensayo</a>
+        <a href="poesia.html" class="nav-link">Poesía</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contacto.html" class="nav-link">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Formulario de autenticación -->
+  <section class="auth-container">
+    <div class="auth-card">
+      <h1 class="auth-title">Acceso Autor</h1>
+      <p class="auth-subtitle">Ingresa tus credenciales para gestionar el contenido</p>
+      
+      <div class="auth-info">
+        <p><strong>Credenciales de demostración:</strong></p>
+        <p style="margin-top: 0.5rem;">Email: <code>autor@ejemplo.com</code></p>
+        <p style="margin-top: 0.25rem;">Contraseña: <code>autor123</code></p>
+      </div>
+      
+      <form id="auth-form">
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            class="form-input" 
+            placeholder="tu@email.com"
+            required
+            autocomplete="email"
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="password" class="form-label">Contraseña</label>
+          <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            class="form-input" 
+            placeholder="••••••••"
+            required
+            autocomplete="current-password"
+          >
+        </div>
+        
+        <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">
+          Iniciar Sesión
+        </button>
+      </form>
+      
+      <p class="text-center mt-3" style="color: var(--text-muted); font-size: 0.85rem;">
+        <a href="index.html" style="color: var(--text-secondary); text-decoration: none;">
+          ← Volver al inicio
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">
+        © 2026 Textos Moi. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
