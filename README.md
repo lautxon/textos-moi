@@ -4,12 +4,15 @@ Un sitio web literario minimalista diseñado para compartir relatos, ensayos y p
 
 ## 📖 Descripción
 
-**Textos Moi** es un espacio íntimo donde las palabras cobran vida a través de diferentes géneros literarios. El sitio ofrece una experiencia de lectura inmersiva con un diseño elegante en tonos marrón oscuro, azul mate y detalles dorados.
+**Textos Moi** es un espacio íntimo donde las palabras cobran vida a través de diferentes géneros literarios. El sitio ofrece una experiencia de lectura inmersiva con un diseño moderno en tonos azul oscuro, acentos eléctricos y tipografía sans-serif contemporánea.
 
 ## ✨ Características
 
 - **Diseño responsive** - Adaptable a dispositivos móviles y desktop
-- **Animaciones sutiles** - Destellos dorados en el fondo y transiciones suaves
+- **Animaciones sutiles** - Destellos en el fondo y transiciones suaves con física spring
+- **Tipografía moderna** - Outfit para titulares, JetBrains Mono para detalles
+- **Bordes redondeados** - Radio generoso en botones, tarjetas y contenedores
+- **Paleta oscura premium** - Fondo azul profundo con acentos desaturados
 - **Secciones literarias**:
   - 📖 **Relato** - Narrativas que exploran la condición humana
   - 📝 **Ensayo** - Reflexiones sobre literatura, arte y cultura
@@ -18,19 +21,26 @@ Un sitio web literario minimalista diseñado para compartir relatos, ensayos y p
   - 💌 **Contacto** - Formulario de contacto y redes sociales
 - **Panel de administración** - Sistema de autenticación para publicar contenido
 - **Sistema de comentarios** - Los visitantes pueden comentar en las publicaciones
-- **Modo oscuro elegante** - Paleta de colores cuidadosamente seleccionada
 
 ## 🎨 Paleta de Colores
 
 | Variable | Color | Uso |
 |----------|-------|-----|
-| `--bg-dark` | #2C1810 | Fondo principal |
-| `--bg-darker` | #1A0F0A | Fondo secundario |
-| `--bg-light` | #3D2318 | Tarjetas y elementos |
-| `--blue-matte` | #5B7C99 | Botones y acentos |
-| `--gold` | #D4AF37 | Títulos y detalles |
-| `--text-primary` | #E8D5C4 | Texto principal |
-| `--text-secondary` | #B8A090 | Texto secundario |
+| `--bg-primary` | #0a0e1a | Fondo principal |
+| `--bg-secondary` | #0f1425 | Fondo secundario |
+| `--bg-tertiary` | #1a1f35 | Tarjetas y elementos |
+| `--accent-primary` | #3b82f6 | Botones y acentos |
+| `--text-primary` | #f1f5f9 | Texto principal |
+| `--text-secondary` | #94a3b8 | Texto secundario |
+| `--text-tertiary` | #64748b | Texto terciario |
+
+## 🎯 Principios de Diseño
+
+- **Tipografía**: Outfit (sans-serif moderna) + JetBrains Mono (detalles técnicos)
+- **Bordes**: Radio generoso (12-24px) para una apariencia suave y contemporánea
+- **Sombras**: Difusas y sutiles con glow en acentos
+- **Motion**: Transiciones cubic-bezier con física spring
+- **Espaciado**: Generoso para crear jerarquía visual
 
 ## 📁 Estructura del Proyecto
 
