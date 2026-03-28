@@ -13,6 +13,7 @@ Un sitio web literario minimalista diseñado para compartir relatos, ensayos y p
 - **Tipografía moderna** - Outfit para titulares, JetBrains Mono para detalles
 - **Bordes redondeados** - Radio generoso en botones, tarjetas y contenedores
 - **Paleta oscura premium** - Fondo azul profundo con acentos desaturados
+- **Imagen de fondo atmosférica** - Textura visual con overlay degradado
 - **Secciones literarias**:
   - 📖 **Relato** - Narrativas que exploran la condición humana
   - 📝 **Ensayo** - Reflexiones sobre literatura, arte y cultura
@@ -59,6 +60,7 @@ textos moi/
 ├── js/
 │   └── main.js         # JavaScript para animaciones e interacciones
 └── images/             # Imágenes locales
+    ├── bg-hero.jpg     # Imagen de fondo para el hero
     ├── relato-*.jpg    # Imágenes para sección de relatos
     ├── ensayo-*.jpg    # Imágenes para sección de ensayos
     └── poesia-*.jpg    # Imágenes para sección de poesía
