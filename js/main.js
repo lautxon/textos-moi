@@ -4,6 +4,18 @@
    ============================================ */
 
 // ============================================
+// FONDO DINÁMICO SEGÚN HORA DEL DÍA
+// ============================================
+
+function setDynamicBackground() {
+  const hour = new Date().getHours();
+  // Usamos el módulo 23 para obtener un índice entre 0-22
+  const imageIndex = (hour % 23) + 1;
+  const bgImage = `url('../images/bg-hero-${imageIndex}.jpg')`;
+  document.documentElement.style.setProperty('--bg-image', bgImage);
+}
+
+// ============================================
 // DESTELLOS DORADOS EN EL FONDO
 // ============================================
 
@@ -375,29 +387,32 @@ function loadBlogPosts() {
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Establecer fondo dinámico según hora del día
+  setDynamicBackground();
+
   // Crear destellos dorados
   createSparkles();
-  
+
   // Animar elementos de texto
   animateTextElements();
-  
+
   // Configurar animaciones al scroll
   setupScrollAnimations();
-  
+
   // Configurar formulario de autenticación
   setupAuthForm();
-  
+
   // Configurar panel de administración
   setupAdminPanel();
-  
+
   // Configurar comentarios
   setupComments();
-  
+
   // Cargar posts del blog
   loadBlogPosts();
-  
+
   // Marcar link activo en navegación
   setActiveNavLink();
-  
+
   console.log('✨ Sitio de autor inicializado');
 });
