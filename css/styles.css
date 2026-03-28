@@ -56,13 +56,6 @@ html {
 body {
   font-family: var(--font-sans);
   background: var(--bg-primary);
-  background-image: 
-    linear-gradient(180deg, rgba(10, 14, 26, 0.6) 0%, rgba(10, 14, 26, 0.75) 100%),
-    var(--bg-image, url('../images/bg-hero-1.jpg'));
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   color: var(--text-primary);
   line-height: 1.7;
   min-height: 100vh;
@@ -70,6 +63,25 @@ body {
   position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   SECCIONES CON/SIN FONDO DE IMAGEN
+   ============================================ */
+
+.section-with-bg {
+  background-image: 
+    linear-gradient(180deg, rgba(10, 14, 26, 0.6) 0%, rgba(10, 14, 26, 0.75) 100%),
+    var(--bg-image, url('../images/bg-hero-1.jpg'));
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.section-no-bg {
+  background: var(--bg-secondary);
 }
 
 /* ============================================
