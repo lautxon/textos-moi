@@ -79,8 +79,9 @@ body {
   position: absolute;
   inset: 0;
   z-index: -1;
+  pointer-events: none;
   /* Imagen de fondo con viñeta: centro claro, bordes oscuros */
-  background: 
+  background:
     radial-gradient(
       ellipse at center,
       transparent 0%,
@@ -92,6 +93,7 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .section-no-bg {
