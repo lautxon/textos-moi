@@ -69,7 +69,7 @@ body {
    SECCIONES CON/SIN FONDO DE IMAGEN
    ============================================ */
 
-/* 
+/*
   LAYERING (de adelante hacia atrás):
   1. .container (contenido) → z-index: 2
   2. ::after (overlay oscuro + viñeta) → z-index: 1
@@ -83,7 +83,6 @@ body {
   background: var(--bg-image, url('../images/bg-hero-1.jpg'));
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   background-repeat: no-repeat;
 }
 
@@ -94,13 +93,14 @@ body {
   inset: 0;
   z-index: 1;
   pointer-events: none;
+  /* Overlay sutil (25%) + viñeta para contraste */
   background:
     radial-gradient(
       ellipse at center,
-      rgba(10, 14, 26, 0.4) 0%,
-      rgba(10, 14, 26, 0.5) 40%,
-      rgba(10, 14, 26, 0.7) 65%,
-      rgba(10, 14, 26, 0.9) 85%,
+      rgba(10, 14, 26, 0.25) 0%,
+      rgba(10, 14, 26, 0.3) 40%,
+      rgba(10, 14, 26, 0.5) 65%,
+      rgba(10, 14, 26, 0.75) 85%,
       var(--bg-primary) 100%
     );
 }
@@ -330,7 +330,12 @@ body {
   opacity: 0;
   animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   line-height: 1.1;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+  /* Text-shadow fuerte para legibilidad sobre cualquier imagen */
+  text-shadow: 
+    0 0 10px rgba(10, 14, 26, 0.8),
+    0 0 20px rgba(10, 14, 26, 0.6),
+    0 0 30px rgba(10, 14, 26, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
@@ -341,7 +346,11 @@ body {
   opacity: 0;
   animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
   line-height: 1.8;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+  /* Text-shadow para legibilidad sobre cualquier imagen */
+  text-shadow: 
+    0 0 8px rgba(10, 14, 26, 0.6),
+    0 0 16px rgba(10, 14, 26, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes fadeInUp {
