@@ -80,14 +80,15 @@ body {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  /* Imagen de fondo con viñeta: centro claro, bordes oscuros */
+  /* Viñeta fuerte: centro claro, bordes fundidos a negro */
   background:
     radial-gradient(
       ellipse at center,
       transparent 0%,
-      transparent 30%,
-      rgba(10, 14, 26, 0.5) 60%,
-      rgba(10, 14, 26, 0.9) 100%
+      rgba(10, 14, 26, 0.3) 40%,
+      rgba(10, 14, 26, 0.7) 65%,
+      rgba(10, 14, 26, 0.95) 85%,
+      var(--bg-primary) 100%
     ),
     var(--bg-image, url('../images/bg-hero-1.jpg'));
   background-size: cover;
