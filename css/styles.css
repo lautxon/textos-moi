@@ -71,15 +71,11 @@ body {
 
 .section-with-bg {
   background-image: 
-   background-image: 
-     linear-gradient(
-     to bottom,
-     transparent 0%,           /* Inicio transparente */
-     transparent 40%,          /* Mantener transparente hasta el 40% */
-     rgba(10, 14, 26, 0.8) 50%, /* Oscuro en el centro (50%) */
-     transparent 60%,          /* Volver a transparente */
-     transparent 100%          /* Fin transparente */
-   ), var(--bg-image, url('../images/bg-hero-1.jpg'));
+   background-image: radial-gradient(
+  circle at center, 
+  transparent 40%,      /* Centro transparente (imagen clara) */
+  rgba(10, 14, 26, 0.8) 100% /* Bordes oscuros */
+), var(--bg-image, url('../images/bg-hero-1.jpg'));
     /*linear-gradient(180deg, rgba(10, 14, 26, 0.6) 0%, rgba(10, 14, 26, 0.75) 100%),
     var(--bg-image, url('../images/bg-hero-1.jpg'));*/
   background-size: cover;
