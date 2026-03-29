@@ -71,10 +71,8 @@ body {
 
 .section-with-bg {
   background-image: 
-   background-image: radial-gradient(circle at center, transparent 50%, rgba(10, 14, 26, 0.8) 100%),
-   var(--bg-image, url('../images/bg-hero-1.jpg'));   
-    /*linear-gradient(180deg, rgba(10, 14, 26, 0.6) 0%, rgba(10, 14, 26, 0.75) 100%),
-    var(--bg-image, url('../images/bg-hero-1.jpg'));*/
+    linear-gradient(180deg, rgba(10, 14, 26, 0.6) 0%, rgba(10, 14, 26, 0.75) 100%),
+    var(--bg-image, url('../images/bg-hero-1.jpg'));
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
