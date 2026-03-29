@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Costos | Textos Moi</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <!-- Fondo con destellos dorados -->
+  <div class="golden-sparkles"></div>
+
+  <!-- Navegación -->
+  <header class="nav-header">
+    <nav class="container nav-container">
+      <a href="index.html" class="logo">Textos Moi</a>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="relato.html" class="nav-link">Relato</a>
+        <a href="ensayo.html" class="nav-link">Ensayo</a>
+        <a href="poesia.html" class="nav-link">Poesía</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contacto.html" class="nav-link">Contacto</a>
+        <a href="calculadora.html" class="nav-link active">Calculadora</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Héroe -->
+  <section class="hero section-with-bg">
+    <div class="container">
+      <h1 class="hero-title text-animation">Calculadora de Proyectos</h1>
+      <p class="hero-subtitle">
+        Obtené un presupuesto estimado para tu sitio web literario o de autor.
+        Ajustá los parámetros según tus necesidades.
+      </p>
+    </div>
+  </section>
+
+  <!-- Calculadora -->
+  <section class="section section-no-bg">
+    <div class="container">
+      <div class="calculator-grid">
+        <!-- Panel de Control -->
+        <div class="calculator-controls">
+          <!-- Tarifa por hora -->
+          <div class="control-group">
+            <label class="control-label" for="hourly-rate">
+              Tarifa por hora (USD)
+              <span class="control-hint">Nivel del desarrollador</span>
+            </label>
+            <div class="slider-container">
+              <input 
+                type="range" 
+                id="hourly-rate" 
+                class="slider" 
+                min="25" 
+                max="150" 
+                value="75" 
+                step="5"
+              >
+              <div class="slider-value">
+                <span id="hourly-rate-display">$75</span>
+                <span class="slider-label">USD/hora</span>
+              </div>
+            </div>
+            <div class="rate-levels">
+              <span class="rate-level" data-rate="25">Junior</span>
+              <span class="rate-level" data-rate="75">Mid</span>
+              <span class="rate-level" data-rate="150">Senior</span>
+            </div>
+          </div>
+
+          <!-- Horas estimadas -->
+          <div class="control-group">
+            <label class="control-label" for="estimated-hours">
+              Horas estimadas
+              <span class="control-hint">Complejidad del proyecto</span>
+            </label>
+            <div class="slider-container">
+              <input 
+                type="range" 
+                id="estimated-hours" 
+                class="slider" 
+                min="10" 
+                max="200" 
+                value="50" 
+                step="5"
+              >
+              <div class="slider-value">
+                <span id="hours-display">50h</span>
+                <span class="slider-label">horas</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tipo de dólar -->
+          <div class="control-group">
+            <label class="control-label">
+              Cotización del dólar
+              <span class="control-hint" id="dolar-date">Actualizado: --</span>
+            </label>
+            <div class="dolar-selector">
+              <button class="dolar-btn active" data-type="blue">
+                <span class="dolar-name">Blue</span>
+                <span class="dolar-value" id="dolar-blue">$--</span>
+              </button>
+              <button class="dolar-btn" data-type="oficial">
+                <span class="dolar-name">Oficial</span>
+                <span class="dolar-value" id="dolar-oficial">$--</span>
+              </button>
+              <button class="dolar-btn" data-type="mep">
+                <span class="dolar-name">MEP</span>
+                <span class="dolar-value" id="dolar-mep">$--</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Features -->
+          <div class="control-group">
+            <label class="control-label">
+              Funcionalidades
+              <span class="control-hint">Seleccioná las que necesites</span>
+            </label>
+            <div class="features-grid">
+              <label class="feature-checkbox">
+                <input type="checkbox" class="feature" value="0.15" data-name="Landing + Portfolio">
+                <span class="feature-label">Landing + Portfolio</span>
+                <span class="feature-cost">+15%</span>
+              </label>
+              <label class="feature-checkbox">
+                <input type="checkbox" class="feature" value="0.20" data-name="Blog + CMS">
+                <span class="feature-label">Blog + CMS</span>
+                <span class="feature-cost">+20%</span>
+              </label>
+              <label class="feature-checkbox">
+                <input type="checkbox" class="feature" value="0.25" data-name="Tienda Online">
+                <span class="feature-label">Tienda Online</span>
+                <span class="feature-cost">+25%</span>
+              </label>
+              <label class="feature-checkbox">
+                <input type="checkbox" class="feature" value="0.10" data-name="Área de Prensa">
+                <span class="feature-label">Área de Prensa</span>
+                <span class="feature-cost">+10%</span>
+              </label>
+              <label class="feature-checkbox">
+                <input type="checkbox" class="feature" value="0.15" data-name="Animaciones Avanzadas">
+                <span class="feature-label">Animaciones Avanzadas</span>
+                <span class="feature-cost">+15%</span>
+              </label>
+              <label class="feature-checkbox">
+                <input type="checkbox" class="feature" value="0.10" data-name="Multilenguaje">
+                <span class="feature-label">Multilenguaje</span>
+                <span class="feature-cost">+10%</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Rush Delivery -->
+          <div class="control-group">
+            <label class="control-label">
+              Entrega urgente
+              <span class="control-hint">+30-50% según plazo</span>
+            </label>
+            <div class="rush-selector">
+              <label class="rush-option">
+                <input type="radio" name="rush" value="0" checked>
+                <span class="rush-label">Normal (4-6 semanas)</span>
+              </label>
+              <label class="rush-option">
+                <input type="radio" name="rush" value="0.3">
+                <span class="rush-label">Rush (+30% - 2-3 semanas)</span>
+              </label>
+              <label class="rush-option">
+                <input type="radio" name="rush" value="0.5">
+                <span class="rush-label">Express (+50% - 1 semana)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel de Resultados -->
+        <div class="calculator-results">
+          <div class="results-card">
+            <h2 class="results-title">Presupuesto Estimado</h2>
+            
+            <div class="results-breakdown">
+              <div class="breakdown-item">
+                <span class="breakdown-label">Base (horas × tarifa)</span>
+                <span class="breakdown-value" id="base-usd">$3,750</span>
+              </div>
+              <div class="breakdown-item">
+                <span class="breakdown-label">Features</span>
+                <span class="breakdown-value" id="features-usd">+$0</span>
+              </div>
+              <div class="breakdown-item">
+                <span class="breakdown-label">Rush delivery</span>
+                <span class="breakdown-value" id="rush-usd">+$0</span>
+              </div>
+              <div class="breakdown-divider"></div>
+              <div class="breakdown-item total">
+                <span class="breakdown-label">Total USD</span>
+                <span class="breakdown-value" id="total-usd">$3,750</span>
+              </div>
+            </div>
+
+            <div class="ars-conversion">
+              <div class="ars-rate">
+                <span class="ars-label">1 USD = </span>
+                <span class="ars-value" id="ars-rate">$--</span>
+                <span class="ars-type" id="ars-type">(Blue)</span>
+              </div>
+              <div class="ars-total">
+                <span class="ars-total-label">Total en ARS</span>
+                <span class="ars-total-value" id="total-ars">$--</span>
+              </div>
+            </div>
+
+            <div class="results-actions">
+              <button class="btn btn-print" onclick="window.print()">
+                📄 Imprimir Cotización
+              </button>
+              <a href="contacto.html" class="btn">
+                ✉️ Contactar
+              </a>
+            </div>
+
+            <p class="results-disclaimer">
+              * Este es un presupuesto estimado. El precio final puede variar según 
+              requerimientos específicos. Contactanos para una cotización personalizada.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">
+        © 2026 Textos Moi. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/calculator.js"></script>
+</body>
+</html>
