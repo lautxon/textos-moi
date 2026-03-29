@@ -300,6 +300,22 @@ body {
   justify-content: center;
   text-align: center;
   padding: 6rem 2rem 4rem;
+  position: relative;
+}
+
+/* Overlay para legibilidad del texto sobre la imagen */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: rgba(10, 14, 26, 0.5);
+  pointer-events: none;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-title {
@@ -311,16 +327,18 @@ body {
   opacity: 0;
   animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   line-height: 1.1;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
 }
 
 .hero-subtitle {
   font-size: 1.125rem;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   max-width: 600px;
   margin: 0 auto 2.5rem;
   opacity: 0;
   animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
   line-height: 1.8;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes fadeInUp {
