@@ -78,7 +78,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: -2;
   pointer-events: none;
   /* Viñeta: centro claro, bordes fundidos a negro 100% */
   background:
@@ -95,6 +95,16 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+}
+
+/* Overlay para legibilidad del texto sobre la imagen */
+.section-with-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(10, 14, 26, 0.5);
+  pointer-events: none;
 }
 
 .section-no-bg {
@@ -300,17 +310,6 @@ body {
   justify-content: center;
   text-align: center;
   padding: 6rem 2rem 4rem;
-  position: relative;
-}
-
-/* Overlay para legibilidad del texto sobre la imagen */
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: rgba(10, 14, 26, 0.5);
-  pointer-events: none;
 }
 
 .hero .container {
