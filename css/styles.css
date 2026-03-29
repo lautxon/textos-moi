@@ -70,21 +70,24 @@ body {
    ============================================ */
 
 .section-with-bg {
+  position: relative;
   background: 
-    radial-gradient(...),  /* Overlay: centro claro, bordes oscuros */
-    var(--bg-image);       /* Imagen de fondo */
-}
-
-.section-with-bg .container {
-  z-index: 1;  /* Contenido por encima del fondo */
-}
-    /*linear-gradient(180deg, rgba(10, 14, 26, 0.6) 0%, rgba(10, 14, 26, 0.75) 100%),
-    var(--bg-image, url('../images/bg-hero-1.jpg'));*/
+    radial-gradient(
+      ellipse at center,
+      transparent 0%,
+      transparent 50%,
+      rgba(10, 14, 26, 0.8) 100%
+    ),
+    var(--bg-image, url('../images/bg-hero-1.jpg'));
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+}
+
+.section-with-bg .container {
   position: relative;
+  z-index: 1;
 }
 
 .section-no-bg {
