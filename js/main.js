@@ -20,10 +20,11 @@ function setDynamicBackground() {
   const isCalculatorPage = window.location.pathname.includes('calculadora.html');
   
   if (isCalculatorPage) {
-    // Use calculator hero image
-    const bgImage = `url('../images/calculadora-hero.jpg')`;
+    // Use random business image from calculadora folder (8 images)
+    const randomIndex = Math.floor(Math.random() * 8) + 1;
+    const bgImage = `url('../images/calculadora/negocios-${randomIndex}.jpg')`;
     document.documentElement.style.setProperty('--bg-image', bgImage);
-    console.log('📊 Fondo: calculadora-hero.jpg');
+    console.log(`💼 Fondo: calculadora/negocios-${randomIndex}.jpg`);
     return;
   }
   
