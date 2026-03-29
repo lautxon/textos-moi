@@ -69,10 +69,17 @@ body {
    SECCIONES CON/SIN FONDO DE IMAGEN
    ============================================ */
 
+/* 
+  LAYERING (de adelante hacia atrás):
+  1. .container (contenido) → z-index: 2
+  2. ::after (overlay oscuro + viñeta) → z-index: 1
+  3. background (imagen de fondo) → z-index: 0
+*/
+
 .section-with-bg {
   position: relative;
   z-index: 0;
-  /* Imagen de fondo */
+  /* Capa 3: Imagen de fondo (atrás de todo) */
   background: var(--bg-image, url('../images/bg-hero-1.jpg'));
   background-size: cover;
   background-position: center;
@@ -80,14 +87,13 @@ body {
   background-repeat: no-repeat;
 }
 
-/* Overlay oscuro + viñeta sobre la imagen */
+/* Capa 2: Overlay oscuro + viñeta (centro claro, bordes oscuros) */
 .section-with-bg::after {
   content: '';
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  /* Overlay uniforme para legibilidad + viñeta (centro claro, bordes oscuros) */
   background:
     radial-gradient(
       ellipse at center,
@@ -99,6 +105,7 @@ body {
     );
 }
 
+/* Capa 1: Contenido (texto, botones) */
 .section-with-bg .container {
   position: relative;
   z-index: 2;
