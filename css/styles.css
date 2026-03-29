@@ -310,6 +310,17 @@ body {
   justify-content: center;
   text-align: center;
   padding: 6rem 2rem 4rem;
+  position: relative;
+}
+
+/* Overlay específico para legibilidad en hero */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: rgba(10, 14, 26, 0.6);
+  pointer-events: none;
 }
 
 .hero .container {
