@@ -6,13 +6,57 @@
 // ============================================
 // FONDO DINÁMICO SEGÚN HORA DEL DÍA
 // ============================================
+// Períodos del día con imágenes temáticas:
+// - Amanecer (05:00 - 07:59): 3 imágenes
+// - Mañana (08:00 - 11:59): 3 imágenes
+// - Mediodía (12:00 - 14:59): 3 imágenes
+// - Siesta (15:00 - 17:59): 3 imágenes
+// - Tarde (18:00 - 20:59): 3 imágenes
+// - Anochecer (21:00 - 22:59): 3 imágenes
+// - Noche (23:00 - 04:59): 6 imágenes
 
 function setDynamicBackground() {
   const hour = new Date().getHours();
-  // Usamos el módulo 23 para obtener un índice entre 0-22
-  const imageIndex = (hour % 23) + 1;
-  const bgImage = `url('../images/bg-hero-${imageIndex}.jpg')`;
+  let period, imageIndex, maxImages;
+  
+  // Determinar período según hora
+  if (hour >= 5 && hour <= 7) {
+    period = 'amanecer';
+    maxImages = 3;
+    imageIndex = (hour - 5) + 1;
+  } else if (hour >= 8 && hour <= 11) {
+    period = 'manana';
+    maxImages = 3;
+    imageIndex = ((hour - 8) % 3) + 1;
+  } else if (hour >= 12 && hour <= 14) {
+    period = 'mediodia';
+    maxImages = 3;
+    imageIndex = ((hour - 12) % 3) + 1;
+  } else if (hour >= 15 && hour <= 17) {
+    period = 'siesta';
+    maxImages = 3;
+    imageIndex = ((hour - 15) % 3) + 1;
+  } else if (hour >= 18 && hour <= 20) {
+    period = 'tarde';
+    maxImages = 3;
+    imageIndex = ((hour - 18) % 3) + 1;
+  } else if (hour >= 21 && hour <= 22) {
+    period = 'anochecer';
+    maxImages = 3;
+    imageIndex = ((hour - 21) % 3) + 1;
+  } else {
+    // Noche (23:00 - 04:59)
+    period = 'noche';
+    maxImages = 6;
+    // Mapeo: 23→1, 0→2, 1→3, 2→4, 3→5, 4→6
+    const nightHour = (hour + 1) % 24;
+    imageIndex = (nightHour >= 23) ? 1 : (nightHour + 2);
+  }
+  
+  const bgImage = `url('../images/${period}-${imageIndex}.jpg')`;
   document.documentElement.style.setProperty('--bg-image', bgImage);
+  
+  console.log(`🌅 Fondo: ${period}-${imageIndex}.jpg (hora: ${hour}:00)`);
 }
 
 // ============================================
