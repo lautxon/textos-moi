@@ -72,14 +72,6 @@ body {
 .section-with-bg {
   position: relative;
   z-index: 0;
-}
-
-.section-with-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
   /* Capas: 1) overlay oscuro para legibilidad, 2) viñeta, 3) imagen de fondo */
   background:
     rgba(10, 14, 26, 0.55),
@@ -96,19 +88,11 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  /* Fade gradual hacia negro en bordes superior e inferior */
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    black 0%,
-    black 60%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    black 0%,
-    black 60%,
-    transparent 100%
-  );
+}
+
+.section-with-bg .container {
+  position: relative;
+  z-index: 1;
 }
 
 .section-no-bg {
