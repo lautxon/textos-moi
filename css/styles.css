@@ -93,14 +93,15 @@ body {
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  /* Overlay sutil (25%) + viñeta para contraste */
+  /* Overlay sutil (10% en centro = 90% claridad) + viñeta para contraste */
   background:
     radial-gradient(
       ellipse at center,
-      rgba(10, 14, 26, 0.25) 0%,
-      rgba(10, 14, 26, 0.3) 40%,
-      rgba(10, 14, 26, 0.5) 65%,
-      rgba(10, 14, 26, 0.75) 85%,
+      rgba(10, 14, 26, 0.10) 0%,
+      rgba(10, 14, 26, 0.15) 30%,
+      rgba(10, 14, 26, 0.35) 55%,
+      rgba(10, 14, 26, 0.60) 75%,
+      rgba(10, 14, 26, 0.80) 90%,
       var(--bg-primary) 100%
     );
 }
