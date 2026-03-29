@@ -16,6 +16,18 @@
 // - Noche (23:00 - 04:59): 6 imágenes
 
 function setDynamicBackground() {
+  // Check if we're on the calculator page
+  const isCalculatorPage = window.location.pathname.includes('calculadora.html');
+  
+  if (isCalculatorPage) {
+    // Use calculator hero image
+    const bgImage = `url('../images/calculadora-hero.jpg')`;
+    document.documentElement.style.setProperty('--bg-image', bgImage);
+    console.log('📊 Fondo: calculadora-hero.jpg');
+    return;
+  }
+  
+  // For all other pages: time-based background images
   const hour = new Date().getHours();
   let period, imageIndex, maxImages;
   
