@@ -317,41 +317,91 @@ body {
   padding: 6rem 2rem 4rem;
 }
 
-.hero .container {
+/* Hero Split Layout (texto izquierda, imagen derecha) */
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  padding: 0;
+  min-height: 85vh;
   position: relative;
-  z-index: 1;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4rem 6rem 4rem 4rem;
+  background: var(--bg-primary);
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 8vw, 5rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--text-primary);
+  text-align: left;
   margin-bottom: 1.5rem;
-  opacity: 0;
-  animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  line-height: 1.1;
-  /* Text-shadow fuerte para legibilidad sobre cualquier imagen */
-  text-shadow: 
-    0 0 10px rgba(10, 14, 26, 0.85),
-    0 0 20px rgba(10, 14, 26, 0.6),
-    0 0 30px rgba(10, 14, 26, 0.4),
-    0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
-  font-size: 1.125rem;
-  color: var(--text-primary);
-  max-width: 600px;
-  margin: 0 auto 2.5rem;
-  opacity: 0;
-  animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
-  line-height: 1.8;
-  /* Text-shadow para legibilidad sobre cualquier imagen */
-  text-shadow: 
-    0 0 8px rgba(10, 14, 26, 0.6),
-    0 0 16px rgba(10, 14, 26, 0.4),
-    0 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: left;
+  max-width: 500px;
+  margin: 0 0 2.5rem 0;
+  color: var(--text-secondary);
+  text-shadow: none;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image-wrapper {
+  position: absolute;
+  inset: 0;
+  /* Imagen de fondo con degradado solo en borde derecho */
+  background: var(--bg-image, url('../images/bg-hero-1.jpg'));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Degradado hacia el borde derecho */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black 70%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black 70%,
+    transparent 100%
+  );
+}
+
+/* Responsive para hero split */
+@media (max-width: 900px) {
+  .hero-split {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-content {
+    padding: 4rem 2rem;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .hero-title,
+  .hero-subtitle {
+    text-align: center;
+  }
+  
+  .hero-image {
+    min-height: 300px;
+  }
 }
 
 @keyframes fadeInUp {
