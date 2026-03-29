@@ -21,8 +21,8 @@ Un sitio web literario minimalista diseñado para compartir relatos, ensayos y p
   - 🌇 **Tarde** (18:00-20:59): 3 imágenes
   - 🌆 **Anochecer** (21:00-22:59): 3 imágenes
   - 🌙 **Noche** (23:00-04:59): 6 imágenes
-- **Hero "Spotlight Inverso"** - Overlay oscuro en el centro (texto legible) que se aclara hacia los bordes (imagen visible)
-- **Glassmorphism card** - Efecto sutil detrás del texto del hero
+- **Hero "Spotlight Inverso"** - Overlay oscuro en el centro (texto legible) que se aclara hacia los bordes (imagen visible). Usar como referencia: _"Implementá Spotlight Inverso, como en Inicio"_.
+- **Glassmorphism card** - Efecto sutil detrás del texto del hero (rgba + backdrop-filter: blur)
 - **Secciones literarias**:
   - 📖 **Relato** - Narrativas que exploran la condición humana
   - 📝 **Ensayo** - Reflexiones sobre literatura, arte y cultura
@@ -53,6 +53,46 @@ Un sitio web literario minimalista diseñado para compartir relatos, ensayos y p
 - **Motion**: Transiciones cubic-bezier con física spring
 - **Espaciado**: Generoso para crear jerarquía visual
 - **Spotlight Inverso**: Overlay radial (70% oscuro en centro → 15% en bordes)
+
+---
+
+## 🏗️ Arquitectura de Componentes
+
+### Hero "Spotlight Inverso" (Inicio, Calculadora)
+
+**Estructura HTML:**
+```html
+<section class="hero section-with-bg">
+  <div class="container hero-container">
+    <div class="hero-content">
+      <!-- Texto y botones -->
+    </div>
+  </div>
+</section>
+```
+
+**Capas CSS (de adelante hacia atrás):**
+1. `.hero-content` → Glassmorphism card (z-index: 2)
+2. `.section-with-bg::before` → Spotlight overlay (z-index: 1)
+3. `.section-with-bg` → Imagen de fondo + mask-image (z-index: 0)
+
+**Referencia:** _"Implementá Spotlight Inverso, como en Inicio"_
+
+---
+
+### Hero Simple (Relato, Ensayo, Poesía)
+
+**Estructura HTML:**
+```html
+<section class="hero hero-section" style="min-height: 50vh;">
+  <div class="container">
+    <h1 class="hero-title">TÍTULO</h1>
+    <p class="hero-subtitle">Subtítulo centrado</p>
+  </div>
+</section>
+```
+
+**Estilo:** Fondo sólido (`bg-secondary`), texto centrado, sin imagen.
 
 ## 📁 Estructura del Proyecto
 
