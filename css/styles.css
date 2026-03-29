@@ -82,7 +82,7 @@ body {
   pointer-events: none;
   /* Capas: 1) overlay oscuro para legibilidad, 2) viñeta, 3) imagen de fondo */
   background:
-    rgba(10, 14, 26, 0.6),
+    rgba(10, 14, 26, 0.55),
     radial-gradient(
       ellipse at center,
       transparent 0%,
@@ -96,6 +96,19 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  /* Fade gradual hacia negro en bordes superior e inferior */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 60%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 60%,
+    transparent 100%
+  );
 }
 
 .section-no-bg {
