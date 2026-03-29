@@ -332,7 +332,7 @@ body {
   line-height: 1.1;
   /* Text-shadow fuerte para legibilidad sobre cualquier imagen */
   text-shadow: 
-    0 0 10px rgba(10, 14, 26, 0.8),
+    0 0 10px rgba(10, 14, 26, 0.85),
     0 0 20px rgba(10, 14, 26, 0.6),
     0 0 30px rgba(10, 14, 26, 0.4),
     0 2px 4px rgba(0, 0, 0, 0.5);
