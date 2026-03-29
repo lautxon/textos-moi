@@ -84,11 +84,24 @@ body {
 .section-with-bg {
   position: relative;
   z-index: 0;
-  /* Capa 3: Imagen de fondo */
+  /* Capa 3: Imagen de fondo con bordes difuminados */
   background: var(--bg-image, url('../images/bg-hero-1.jpg'));
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  /* Bordes difuminados hacia el exterior */
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    black 60%,
+    rgba(0, 0, 0, 0.5) 80%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse at center,
+    black 60%,
+    rgba(0, 0, 0, 0.5) 80%,
+    transparent 100%
+  );
 }
 
 /* Capa 2: Spotlight inverso - oscuro en centro, claro en bordes */
@@ -100,9 +113,10 @@ body {
   pointer-events: none;
   /* 
      Radial gradient que crea el "spotlight inverso":
-     - Centro: 65% oscuro (texto legible)
-     - 40%: 45% oscuro (transición)
-     - 70%: 25% oscuro (imagen más visible)
+     - Centro: 70% oscuro (texto legible)
+     - 25%: 55% oscuro (transición)
+     - 45%: 40% oscuro (imagen más visible)
+     - 65%: 25% oscuro (imagen visible)
      - Bordes: 15% oscuro (imagen casi pura)
   */
   background: radial-gradient(
