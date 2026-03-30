@@ -54,7 +54,7 @@ function setDynamicBackground() {
     imageIndex = (nightHour >= 23) ? 1 : (nightHour + 2);
   }
 
-  const bgImage = `url('./images/${period}-${imageIndex}.jpg')`;
+  const bgImage = `url('../images/${period}-${imageIndex}.jpg')`;
   document.documentElement.style.setProperty('--bg-image', bgImage);
 
   console.log(`🌅 Fondo: ${period}-${imageIndex}.jpg (hora: ${hour}:00)`);
