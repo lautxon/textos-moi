@@ -22,8 +22,15 @@ function setDynamicBackground() {
   if (isCalculatorPage) {
     // Use random business image from calculadora folder (8 images)
     const randomIndex = Math.floor(Math.random() * 8) + 1;
-    const bgImage = `url('../images/calculadora/negocios-${randomIndex}.jpg')`;
-    document.documentElement.style.setProperty('--bg-image', bgImage);
+    // Apply image directly to element with cache-buster
+    const heroSection = document.querySelector('.calculadora .hero, .hero-calculadora, section.hero');
+    if (heroSection) {
+      const imageUrl = `../images/calculadora/negocios-${randomIndex}.jpg?v=${Date.now()}`;
+      heroSection.style.backgroundImage = `url('${imageUrl}')`;
+      heroSection.style.backgroundSize = 'cover';
+      heroSection.style.backgroundPosition = 'center';
+      heroSection.style.backgroundRepeat = 'no-repeat';
+    }
     console.log(`💼 Fondo: calculadora/negocios-${randomIndex}.jpg`);
     return;
   }
