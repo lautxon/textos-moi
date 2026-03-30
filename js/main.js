@@ -25,11 +25,15 @@ function setDynamicBackground() {
     // Apply image directly to element with cache-buster
     const heroSection = document.getElementById('hero-calculadora');
     if (heroSection) {
-      const imageUrl = `../images/calculadora/negocios-${randomIndex}.jpg?v=${Date.now()}`;
-      heroSection.style.backgroundImage = `url('${imageUrl}')`;
-      heroSection.style.backgroundSize = 'cover';
-      heroSection.style.backgroundPosition = 'center';
-      heroSection.style.backgroundRepeat = 'no-repeat';
+      // Usamos ruta absoluta desde la raíz del proyecto
+      const imageUrl = `./images/calculadora/negocios-${randomIndex}.jpg`;
+      heroSection.style.setProperty('background-image', `url('${imageUrl}')`, 'important');
+      heroSection.style.setProperty('background-size', 'cover', 'important');
+      heroSection.style.setProperty('background-position', 'center', 'important');
+      heroSection.style.setProperty('background-repeat', 'no-repeat', 'important');
+      console.log(`💼 Fondo aplicado: ${imageUrl}`);
+    } else {
+      console.error('❌ No se encontró #hero-calculadora');
     }
     console.log(`💼 Fondo: calculadora/negocios-${randomIndex}.jpg`);
     return;
@@ -73,7 +77,7 @@ function setDynamicBackground() {
     imageIndex = (nightHour >= 23) ? 1 : (nightHour + 2);
   }
 
-  const bgImage = `url('../images/${period}-${imageIndex}.jpg')`;
+  const bgImage = `url('./images/${period}-${imageIndex}.jpg')`;
   document.documentElement.style.setProperty('--bg-image', bgImage);
 
   console.log(`🌅 Fondo: ${period}-${imageIndex}.jpg (hora: ${hour}:00)`);
@@ -451,7 +455,7 @@ function loadBlogPosts() {
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Establecer fondo dinámico según hora del día
+  // Establecer fondo dinámico según hora del día (o calculadora)
   setDynamicBackground();
 
   // Crear destellos dorados
