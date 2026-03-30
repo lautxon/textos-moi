@@ -111,7 +111,7 @@ body {
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  /* 
+  /*
      Radial gradient que crea el "spotlight inverso":
      - Centro: 70% oscuro (texto legible)
      - 25%: 55% oscuro (transición)
@@ -127,6 +127,11 @@ body {
     rgba(10, 14, 26, 0.25) 65%,
     rgba(10, 14, 26, 0.15) 100%
   );
+}
+
+/* Para calculadora: deshabilitar spotlight (la imagen ya tiene su propio overlay) */
+.hero-calculadora::before {
+  display: none;
 }
 
 /* Capa 1: Contenido */

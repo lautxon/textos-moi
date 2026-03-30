@@ -18,12 +18,12 @@
 function setDynamicBackground() {
   // Check if we're on the calculator page
   const isCalculatorPage = window.location.pathname.includes('calculadora.html');
-  
+
   if (isCalculatorPage) {
     // Use random business image from calculadora folder (8 images)
     const randomIndex = Math.floor(Math.random() * 8) + 1;
     // Apply image directly to element with cache-buster
-    const heroSection = document.querySelector('.calculadora .hero, .hero-calculadora, section.hero');
+    const heroSection = document.getElementById('hero-calculadora');
     if (heroSection) {
       const imageUrl = `../images/calculadora/negocios-${randomIndex}.jpg?v=${Date.now()}`;
       heroSection.style.backgroundImage = `url('${imageUrl}')`;
@@ -34,11 +34,11 @@ function setDynamicBackground() {
     console.log(`💼 Fondo: calculadora/negocios-${randomIndex}.jpg`);
     return;
   }
-  
+
   // For all other pages: time-based background images
   const hour = new Date().getHours();
   let period, imageIndex, maxImages;
-  
+
   // Determinar período según hora
   if (hour >= 5 && hour <= 7) {
     period = 'amanecer';
@@ -72,10 +72,10 @@ function setDynamicBackground() {
     const nightHour = (hour + 1) % 24;
     imageIndex = (nightHour >= 23) ? 1 : (nightHour + 2);
   }
-  
+
   const bgImage = `url('../images/${period}-${imageIndex}.jpg')`;
   document.documentElement.style.setProperty('--bg-image', bgImage);
-  
+
   console.log(`🌅 Fondo: ${period}-${imageIndex}.jpg (hora: ${hour}:00)`);
 }
 
