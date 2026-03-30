@@ -16,32 +16,7 @@
 // - Noche (23:00 - 04:59): 6 imágenes
 
 function setDynamicBackground() {
-  // Check if we're on the calculator page
-  const isCalculatorPage = window.location.pathname.includes('calculadora.html');
-
-  if (isCalculatorPage) {
-    // Use random business image from calculadora folder (8 images)
-    const randomIndex = Math.floor(Math.random() * 8) + 1;
-    // Apply image directly to element with cache-buster
-    const heroSection = document.getElementById('hero-calculadora');
-    if (heroSection) {
-      // Usamos ruta absoluta desde la raíz del proyecto + timestamp para evitar cache
-      const imageUrl = `./images/calculadora/negocios-${randomIndex}.jpg?t=${Date.now()}`;
-      heroSection.setAttribute('style', 
-        `background-image: url('${imageUrl}') !important; 
-         background-size: cover !important; 
-         background-position: center !important; 
-         background-repeat: no-repeat !important;`
-      );
-      console.log(`💼 Fondo aplicado: ${imageUrl}`);
-    } else {
-      console.error('❌ No se encontró #hero-calculadora');
-    }
-    console.log(`💼 Fondo: calculadora/negocios-${randomIndex}.jpg`);
-    return;
-  }
-
-  // For all other pages: time-based background images
+  // For all pages: time-based background images
   const hour = new Date().getHours();
   let period, imageIndex, maxImages;
 

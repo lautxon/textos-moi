@@ -130,12 +130,12 @@ body {
 }
 
 /* Para calculadora: deshabilitar spotlight (la imagen ya tiene su propio overlay) */
-.hero-calculadora::before {
+body.calculadora-page .hero-calculadora::before {
   display: none !important;
 }
 
 /* Tambien deshabilitar el ::before de section-with-bg para calculadora */
-section.hero-calculadora.section-with-bg::before {
+body.calculadora-page section.hero-calculadora.section-with-bg::before {
   content: none !important;
 }
 
