@@ -25,12 +25,14 @@ function setDynamicBackground() {
     // Apply image directly to element with cache-buster
     const heroSection = document.getElementById('hero-calculadora');
     if (heroSection) {
-      // Usamos ruta absoluta desde la raíz del proyecto
-      const imageUrl = `./images/calculadora/negocios-${randomIndex}.jpg`;
-      heroSection.style.setProperty('background-image', `url('${imageUrl}')`, 'important');
-      heroSection.style.setProperty('background-size', 'cover', 'important');
-      heroSection.style.setProperty('background-position', 'center', 'important');
-      heroSection.style.setProperty('background-repeat', 'no-repeat', 'important');
+      // Usamos ruta absoluta desde la raíz del proyecto + timestamp para evitar cache
+      const imageUrl = `./images/calculadora/negocios-${randomIndex}.jpg?t=${Date.now()}`;
+      heroSection.setAttribute('style', 
+        `background-image: url('${imageUrl}') !important; 
+         background-size: cover !important; 
+         background-position: center !important; 
+         background-repeat: no-repeat !important;`
+      );
       console.log(`💼 Fondo aplicado: ${imageUrl}`);
     } else {
       console.error('❌ No se encontró #hero-calculadora');
